@@ -19,8 +19,8 @@ import com.bookshopapp.model.service.BookService;
 @RestController
 @RequestMapping(path = "/api")
 public class BookController {
-    private BookService bookService;
-    @Autowired
+        private BookService bookService;
+        @Autowired
 	public BookController(BookService bookService) {
     	this.bookService = bookService;
 	}
@@ -34,7 +34,7 @@ public class BookController {
 	public ResponseEntity<Book> getAnBook(@PathVariable(name = "id") Long id) {
 		Book book = bookService.findBookById(id).orElseThrow(BookNotFoundException::new);
 		return new ResponseEntity<Book>(book, HttpStatus.OK);
-    }
+        }
 
 	@GetMapping(path = "/bookName/{bookName}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Book> getAnBook(@PathVariable(name = "bookName") String bookName) {
@@ -48,15 +48,10 @@ public class BookController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
-	/*
-	 * @PostMapping(path = "book") public ResponseEntity<Book>
-	 * addAnBook(@RequestBody Book book) { return new
-	 * ResponseEntity<Book>(bookService.addBook(book), HttpStatus.CREATED); }
-	 */
 	@PostMapping(path="book/{id}",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Book>addAnBook(@PathVariable(name="id")Long id, @RequestBody Book book){
-        return new ResponseEntity<Book>(bookService.addBook(book),HttpStatus.CREATED);
-    }
+        public ResponseEntity<Book>addAnBook(@PathVariable(name="id")Long id, @RequestBody Book book){
+                return new ResponseEntity<Book>(bookService.addBook(book),HttpStatus.CREATED);
+        }
 
 	@PutMapping(path = "book/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Book> updateAnBook(@PathVariable(name = "id") Long id, @RequestBody Book book) {
