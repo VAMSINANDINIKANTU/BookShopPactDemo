@@ -25,8 +25,8 @@ public class BookConsumerService {
 			return BookHolder;
 		}
 		return BookHolder;
-	}
-      public Optional<Book> getBook(String bookName) {
+        }
+        public Optional<Book> getBook(String bookName) {
 		Optional<Book> BookHolder = Optional.empty();
 		try {
 			BookHolder = Optional.ofNullable(providerConnector
