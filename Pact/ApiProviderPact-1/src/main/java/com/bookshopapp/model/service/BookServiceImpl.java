@@ -20,11 +20,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public Optional<Book> findBookById(Long id) {
     	return bookRepo.findBookById(id);
-	}
+    }
     @Override
     public Optional<Book> findBybookName(String bookName) {
     	return bookRepo.findBybookName(bookName);
-	}
+    }
     @Override
     public void deleteBook(Long id) {
     	bookRepo.deleteById(id);
@@ -41,5 +41,5 @@ public class BookServiceImpl implements BookService {
 	bookToBeUpdated.setBookName(book.getBookName());
 	bookToBeUpdated.setPublisherName(book.getPublisherName());
 	return bookRepo.save(bookToBeUpdated);
-	}
+    }
 }
