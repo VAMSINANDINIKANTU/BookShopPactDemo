@@ -9,27 +9,27 @@ import javax.persistence.Table;
 @Table(name = "bookdetails")
 public class Book {
     @Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long id;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
     public String bookName;
     public double bookPrice;
     public String publisherName;
     public int publishingYear;
     public String getBookName() {
     	return bookName;
-	}
+    }
     public String getPublisherName() {
     	return publisherName;
-	}
+    }
     public void setPublisherName(String publisherName) {
     	this.publisherName = publisherName;
-	}
+    }
     public void setBookName(String bookName) {
     	this.bookName = bookName;
-	}
+    }
     public double getBookPrice() {
     	return bookPrice;
-	}
+    }
     public void setBookPrice(double bookPrice) {
     	this.bookPrice = bookPrice;
 	}
@@ -38,19 +38,18 @@ public class Book {
 	}
     public void setPublishingYear(int publishingYear) {
     	this.publishingYear = publishingYear;
-	}
+    }
     @Override
-	public String toString() {
+    public String toString() {
     	return "Book [bookName=" + bookName + ", bookPrice=" + bookPrice + ", publisherName=" + publisherName
 				+ ", publishingYear=" + publishingYear + "]";
-	}
+    }
     public Long getId() {
     	return id;
-	}
+    }
     public void setId(Long id) {
     	this.id = id;
-	}
-    
+    }
     public Book(Long id, String bookName, double bookPrice, String publisherName, int publishingYear) {
 		super();
 		this.id = id;
@@ -58,8 +57,8 @@ public class Book {
 		this.bookPrice = bookPrice;
 		this.publisherName = publisherName;
 		this.publishingYear = publishingYear;
-	}
-	public Book() {
+    }
+    public Book() {
     	super();
     }
 }
