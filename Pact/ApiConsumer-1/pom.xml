@@ -118,17 +118,7 @@
                     <pactBrokerAuthenticationScheme>Bearer</pactBrokerAuthenticationScheme>
                 </configuration>
             </plugin>
-			<!-- <plugin>
-                <groupId>au.com.dius</groupId>
-                <artifactId>pact-jvm-provider-maven</artifactId>
-                <version>4.0.0</version>
-                <configuration>
-                   <pactBrokerUrl>${pactBrokerUrl}</pactBrokerUrl>
-                    <trimSnapshot>true</trimSnapshot> 
-                    <pactBrokerToken>${pactBrokerToken}</pactBrokerToken> 
-                    <pactBrokerAuthenticationScheme>Bearer</pactBrokerAuthenticationScheme>
-                </configuration>
-            </plugin> -->
+			
 			
 		</plugins>
 	</build>
