@@ -1,5 +1,4 @@
 package com.bookshopapp;
-
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,7 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.bookshopapp.service.BookConsumerService;
 import com.bookshopapp.service.ProviderConnector;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import au.com.dius.pact.consumer.Pact;
 import au.com.dius.pact.consumer.PactProviderRuleMk2;
 import au.com.dius.pact.consumer.PactVerification;
