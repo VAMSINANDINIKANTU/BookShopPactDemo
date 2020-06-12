@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.bookshopapp.BookShopMaintenanceApplicationProviderTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.211 s <<< FAILURE! - in com.bookshopapp.BookShopMaintenanceApplicationProviderTests
+initializationError(com.bookshopapp.BookShopMaintenanceApplicationProviderTests)  Time elapsed: 0.008 s  <<< ERROR!
+java.net.UnknownHostException: https
+

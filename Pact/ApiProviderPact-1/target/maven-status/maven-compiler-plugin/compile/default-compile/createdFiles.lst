@@ -1,0 +1,7 @@
+com\bookshopapp\ApiProviderPact1Application.class
+com\bookshopapp\model\service\BookServiceImpl.class
+com\bookshopapp\model\entities\Book.class
+com\bookshopapp\web\controller\BookController.class
+com\bookshopapp\model\repository\BookRepository.class
+com\bookshopapp\exceptionhandler\BookNotFoundException.class
+com\bookshopapp\model\service\BookService.class

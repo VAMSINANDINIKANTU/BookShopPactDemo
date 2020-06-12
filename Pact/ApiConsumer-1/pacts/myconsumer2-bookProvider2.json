@@ -1,0 +1,55 @@
+{
+    "provider": {
+        "name": "bookProvider2"
+    },
+    "consumer": {
+        "name": "myconsumer2"
+    },
+    "interactions": [
+        {
+            "description": "get Book data that was not in provider",
+            "request": {
+                "method": "GET",
+                "path": "/bookshopmaintenanceapplication/api/book/1"
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "bookName": "C++",
+                    "bookPrice": 324,
+                    "publisherName": "Manoj",
+                    "publishingYear": 2001
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "SomeState"
+                }
+            ]
+        },
+        {
+            "description": "get Book data",
+            "request": {
+                "method": "GET",
+                "path": "/bookshopmaintenanceapplication/api/book/7"
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "bookName": "Head First Java",
+                    "bookPrice": 498,
+                    "publisherName": "Raj",
+                    "publishingYear": 2005
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.14"
+        }
+    }
+}

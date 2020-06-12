@@ -1,0 +1,124 @@
+{
+    "metaData": {
+        "date": "2020-06-07T11:19:12+0000",
+        "pactJvmVersion": "3.6.14",
+        "reportFormat": "0.0.0"
+    },
+    "provider": {
+        "name": "bookProvider"
+    },
+    "execution": [
+        {
+            "consumer": {
+                "name": "myconsumer"
+            },
+            "interactions": [
+                {
+                    "interaction": {
+                        "description": "get Book data",
+                        "request": {
+                            "method": "GET",
+                            "path": "/bookshopmaintenanceapplication/api/book/7"
+                        },
+                        "response": {
+                            "status": 200,
+                            "body": {
+                                "bookName": "Head First Java",
+                                "bookPrice": "498",
+                                "publisherName": "Raj",
+                                "publishingYear": 2005
+                            }
+                        }
+                    },
+                    "verification": {
+                        "result": "failed",
+                        "body": {
+                            "comparison": {
+                                "$.bookPrice": [
+                                    {
+                                        "mismatch": "Expected '498' but received 498.0",
+                                        "diff": ""
+                                    }
+                                ]
+                            },
+                            "diff": [
+                                "{",
+                                "+    \"id\": 7,",
+                                "    \"bookName\": \"Head First Java\",",
+                                "-    \"bookPrice\": \"498\",",
+                                "+    \"bookPrice\": 498.0,",
+                                "    \"publisherName\": \"Raj\","
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "consumer": {
+                "name": "myconsumer"
+            },
+            "interactions": [
+                {
+                    "interaction": {
+                        "description": "get Book data that was not in provider",
+                        "request": {
+                            "method": "GET",
+                            "path": "/bookshopmaintenanceapplication/api/book/1"
+                        },
+                        "response": {
+                            "status": 200,
+                            "body": {
+                                "bookName": "C++",
+                                "bookPrice": "324",
+                                "publisherName": "Manoj",
+                                "publishingYear": 2001
+                            }
+                        }
+                    },
+                    "verification": {
+                        "result": "failed",
+                        "status": [
+                            "expected status of 200 but was 404"
+                        ],
+                        "body": {
+                            "comparison": {
+                                "$": [
+                                    {
+                                        "mismatch": "Expected bookName='C++' but was missing",
+                                        "diff": "{\n-    \"bookName\": \"C++\",\n-    \"bookPrice\": \"324\",\n-    \"publisherName\": \"Manoj\",\n-    \"publishingYear\": 2001\n+    \"path\": \"/bookshopmaintenanceapplication/api/book/1\",\n+    \"timestamp\": \"2020-06-07T11:19:12.745+0000\",\n+    \"error\": \"Not Found\",\n+    \"status\": 404,\n+    \"message\": \"No message available\"\n}"
+                                    },
+                                    {
+                                        "mismatch": "Expected bookPrice='324' but was missing",
+                                        "diff": "{\n-    \"bookName\": \"C++\",\n-    \"bookPrice\": \"324\",\n-    \"publisherName\": \"Manoj\",\n-    \"publishingYear\": 2001\n+    \"path\": \"/bookshopmaintenanceapplication/api/book/1\",\n+    \"timestamp\": \"2020-06-07T11:19:12.745+0000\",\n+    \"error\": \"Not Found\",\n+    \"status\": 404,\n+    \"message\": \"No message available\"\n}"
+                                    },
+                                    {
+                                        "mismatch": "Expected publisherName='Manoj' but was missing",
+                                        "diff": "{\n-    \"bookName\": \"C++\",\n-    \"bookPrice\": \"324\",\n-    \"publisherName\": \"Manoj\",\n-    \"publishingYear\": 2001\n+    \"path\": \"/bookshopmaintenanceapplication/api/book/1\",\n+    \"timestamp\": \"2020-06-07T11:19:12.745+0000\",\n+    \"error\": \"Not Found\",\n+    \"status\": 404,\n+    \"message\": \"No message available\"\n}"
+                                    },
+                                    {
+                                        "mismatch": "Expected publishingYear=2001 but was missing",
+                                        "diff": "{\n-    \"bookName\": \"C++\",\n-    \"bookPrice\": \"324\",\n-    \"publisherName\": \"Manoj\",\n-    \"publishingYear\": 2001\n+    \"path\": \"/bookshopmaintenanceapplication/api/book/1\",\n+    \"timestamp\": \"2020-06-07T11:19:12.745+0000\",\n+    \"error\": \"Not Found\",\n+    \"status\": 404,\n+    \"message\": \"No message available\"\n}"
+                                    }
+                                ]
+                            },
+                            "diff": [
+                                "{",
+                                "-    \"bookName\": \"C++\",",
+                                "-    \"bookPrice\": \"324\",",
+                                "-    \"publisherName\": \"Manoj\",",
+                                "-    \"publishingYear\": 2001",
+                                "+    \"timestamp\": \"2020-06-07T11:19:12.745+0000\",",
+                                "+    \"status\": 404,",
+                                "+    \"error\": \"Not Found\",",
+                                "+    \"message\": \"No message available\",",
+                                "+    \"path\": \"/bookshopmaintenanceapplication/api/book/1\"",
+                                "}"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
